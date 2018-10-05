@@ -28,7 +28,7 @@ public class ProductService {
   }
 
   public List<Product> listAllProducts() {
-    return productRepository.findAll();
+    return productRepository.getAllProducts("mobile");
   }
 
   public Product create(Product product) {
