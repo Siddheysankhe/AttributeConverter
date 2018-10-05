@@ -21,7 +21,7 @@ public class SiddheyMySQL57InnoDBDialect extends MySQL57InnoDBDialect {
   public SiddheyMySQL57InnoDBDialect(){
     super();
     registerFunction("LIMIT",
-        new SQLFunctionTemplate(StandardBasicTypes.SERIALIZABLE, "limit ?1"));
+        new SQLFunctionTemplate(StandardBasicTypes.INTEGER, "limit ?1"));
     registerFunction("MATCH", new SQLFunctionTemplate(
         StandardBasicTypes.INTEGER, "match(?1) against  (?2 in boolean mode)"));
   }

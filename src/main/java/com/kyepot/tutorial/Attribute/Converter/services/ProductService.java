@@ -28,7 +28,7 @@ public class ProductService {
   }
 
   public List<Product> listAllProducts() {
-    return productRepository.getAllProducts("mobile");
+    return productRepository.getLimitedProducts("mobile");
   }
 
   public Product create(Product product) {
