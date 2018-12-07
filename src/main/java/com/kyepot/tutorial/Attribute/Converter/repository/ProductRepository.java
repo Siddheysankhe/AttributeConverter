@@ -18,7 +18,4 @@ public interface ProductRepository extends JpaRepository<Product, String> {
   
   @Query("SELECT p FROM #{#entityName} p WHERE MATCH(p.name,:name) > 0")
   List<Product> getAllProducts(@Param("name") final String name);
-  
-   @Query("SELECT p FROM #{#entityName} p LIMIT(1)")
-   List<Product> getLimitedProducts(@Param("name") final String name);
 }

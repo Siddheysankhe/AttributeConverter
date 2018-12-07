@@ -12,8 +12,8 @@ import com.kyepot.tutorial.Attribute.Converter.services.ProductService;
 
 import java.util.List;
 
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -33,13 +33,18 @@ public class ProductController {
   }
   
   @GetMapping("/list")
-  public List<Product> list() {
+  public List<Product> listProducts() {
     return productService.listAllProducts();
   }
   
   @PostMapping("/add")
   public Product create(@RequestBody Product product){
     return productService.create(product);
+  }
+  
+  @GetMapping("/update/{uuid}")
+  public Product update(@PathVariable("uuid")final String productUuid){
+    return productService.update(productUuid);
   }
   
 }
